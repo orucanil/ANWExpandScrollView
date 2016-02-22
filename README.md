@@ -111,15 +111,9 @@ This method is called whenever the scroll change status far enough for the curre
 How to use ?
 ----------
 
-![Visual4](http://g.recordit.co/ykx1SbnAmZ.gif)
-----
-
 ```Objective-C
-#import "EndlessTableView.h"
+#import "PLExpandScrollView.h"
 ...
-
-@property (weak, nonatomic) IBOutlet EndlessTableView *tableViewProduct;
-@property (weak, nonatomic) IBOutlet EndlessTableView *tableViewCampaign;
 
 - (void)loadView
 {
