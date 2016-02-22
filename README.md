@@ -123,9 +123,9 @@ PLExpandScrollView *scrollView = [PLExpandScrollView initWithFrame:[UIScreen mai
 scrollView.delegate = self;
 scrollView.dataSource = self;
 
-[view reloadData];
+[scrollView reloadData];
 
-[view expandAtIndex:0 animated:NO];
+[scrollView expandAtIndex:0 animated:NO];
 
 }
 ```
