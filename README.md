@@ -35,7 +35,7 @@ Enables and disables user scrolling on collapse state of the scroll. The scroll 
 
     @property (nonatomic, assign, readonly) PLExpandScrollViewStatus status;
 
-Returns the scroll is currently being status programatically.
+Returns the scroll is currently being status programatically. (PLExpandScrollViewStatusExpand, PLExpandScrollViewStatusCollapse or PLExpandScrollViewStatusPinching)
 
     @property (nonatomic, assign, readonly) NSUInteger currentPageIndex;
 
@@ -113,6 +113,9 @@ How to use ?
 
 ```Objective-C
 #import "PLExpandScrollView.h"
+
+@interface ViewController () <PLExpandScrollViewDataSource,PLExpandScrollViewDelegate>
+
 ...
 
 - (void)loadView
@@ -128,6 +131,36 @@ scrollView.dataSource = self;
 [scrollView expandAtIndex:0 animated:NO];
 
 }
+
+...
+
+#pragma mark - PLExpandScrollView delegates & datasources
+
+-(NSUInteger)numberOfItemsInScrollView:(PLExpandScrollView *)scrollView
+{
+return 10;
+}
+
+-(UIView *)expandScrollView:(PLExpandScrollView *)scrollView viewForItemAtIndex:(NSUInteger)index
+{
+return [UIView new];
+}
+
+-(void)expandScrollView:(PLExpandScrollView *)scrollView didSelectItemAtIndex:(NSUInteger)index
+{
+
+}
+
+-(CGFloat)collapseHeightInScrollView:(PLExpandScrollView *)scrollView index:(NSUInteger)index
+{
+    return 160.0f;
+}
+
+-(void)expandScrollView:(PLExpandScrollView *)scrollView changedStatus:(PLExpandScrollViewStatus)status previousStatus:(PLExpandScrollViewStatus)previousStatus
+{
+    // Show Animation
+}
+
 ```
 
 Build and run the project files. Enjoy more examples!
