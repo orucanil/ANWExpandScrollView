@@ -2,11 +2,16 @@
 Expand - Collapse Scroll View - Animate With Pinch Gesture 
 
 
-## Display Type Visual Examples 
+## Display Visual Example 
 
 ----
 ![Visual1](http://g.recordit.co/YIPEARCPeZ.gif)
 
+
+Installation
+--------------
+
+To use the PLExpandScrollView class in an app, just drag the PLExpandScrollView class files (demo files and assets are not needed) into your project.
 
 Properties
 --------------
