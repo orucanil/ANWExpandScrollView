@@ -1,11 +1,12 @@
 # ExpandScrollView
 Expand - Collapse Scroll View - Animate With Pinch Gesture 
 
+The component was used in the platinum application : https://itunes.apple.com/tr/app/turkcell-platinum-size-ozel/id671494224?mt=8
 
 ## Display Visual Example 
 
 ----
-![Visual1](http://g.recordit.co/YIPEARCPeZ.gif)
+![Visual1](http://g.recordit.co/2ExfUA6pbw.gif)
 
 
 Installation
