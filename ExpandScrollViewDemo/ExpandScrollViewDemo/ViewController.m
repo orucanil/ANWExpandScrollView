@@ -7,9 +7,9 @@
 //
 
 #import "ViewController.h"
-#import "PLExpandScrollView.h"
+#import "ANWExpandScrollView.h"
 
-@interface ViewController ()<PLExpandScrollViewDataSource,PLExpandScrollViewDelegate>
+@interface ViewController ()<ANWExpandScrollViewDataSource,ANWExpandScrollViewDelegate>
 
 @property (nonatomic,strong) NSArray *colors;
 
@@ -23,7 +23,7 @@
     
     _colors = @[[self randomColor],[self randomColor],[self randomColor],[self randomColor],[self randomColor],[self randomColor],[self randomColor],[self randomColor],[self randomColor],[self randomColor],[self randomColor]];
     
-    PLExpandScrollView *scrollView = [PLExpandScrollView initWithFrame:[UIScreen mainScreen].bounds];
+    ANWExpandScrollView *scrollView = [ANWExpandScrollView initWithFrame:[UIScreen mainScreen].bounds];
     scrollView.delegate = self;
     scrollView.dataSource = self;
     
@@ -48,14 +48,14 @@
     return color;
 }
 
-#pragma mark - PLExpandScrollView delegates & datasources
+#pragma mark - ANWExpandScrollView delegates & datasources
 
--(NSUInteger)numberOfItemsInScrollView:(PLExpandScrollView *)scrollView
+-(NSUInteger)numberOfItemsInScrollView:(ANWExpandScrollView *)scrollView
 {
     return _colors.count;
 }
 
--(UIView *)expandScrollView:(PLExpandScrollView *)scrollView viewForItemAtIndex:(NSUInteger)index
+-(UIView *)expandScrollView:(ANWExpandScrollView *)scrollView viewForItemAtIndex:(NSUInteger)index
 {
     UIView * view = [UIView new];
     
@@ -64,17 +64,17 @@
     return view;
 }
 
--(void)expandScrollView:(PLExpandScrollView *)scrollView didSelectItemAtIndex:(NSUInteger)index
+-(void)expandScrollView:(ANWExpandScrollView *)scrollView didSelectItemAtIndex:(NSUInteger)index
 {
     
 }
 
--(CGFloat)collapseHeightInScrollView:(PLExpandScrollView *)scrollView index:(NSUInteger)index
+-(CGFloat)collapseHeightInScrollView:(ANWExpandScrollView *)scrollView index:(NSUInteger)index
 {
     return 160.0f;
 }
 
--(void)expandScrollView:(PLExpandScrollView *)scrollView changedStatus:(PLExpandScrollViewStatus)status previousStatus:(PLExpandScrollViewStatus)previousStatus
+-(void)expandScrollView:(ANWExpandScrollView *)scrollView changedStatus:(ANWExpandScrollViewStatus)status previousStatus:(ANWExpandScrollViewStatus)previousStatus
 {
     // Show Animation
 }
