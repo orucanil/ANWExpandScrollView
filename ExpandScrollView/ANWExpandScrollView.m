@@ -1,16 +1,16 @@
 //
-//  PLExpandScrollView.m
+//  ANWExpandScrollView.m
 //  OmsaTech
 //
 //  Created by Anil Oruc on 7/23/15.
 //  Copyright (c) 2015 OmsaTech. All rights reserved.
 //
 
-#import "PLExpandScrollView.h"
+#import "ANWExpandScrollView.h"
 
 #define COLLAPSE_DEFAULTH_HEIGHT 44.0f
 
-@interface PLExpandScrollView ()<UIScrollViewDelegate,UITableViewDataSource,UITableViewDelegate,UIGestureRecognizerDelegate>
+@interface ANWExpandScrollView ()<UIScrollViewDelegate,UITableViewDataSource,UITableViewDelegate,UIGestureRecognizerDelegate>
 {
     UIPinchGestureRecognizer *pgr;
     
@@ -33,11 +33,11 @@
 
 @end
 
-@implementation PLExpandScrollView
+@implementation ANWExpandScrollView
 
 + (instancetype)init
 {
-    PLExpandScrollView *view = [[NSBundle mainBundle] loadNibNamed:NSStringFromClass([self class]) owner:self options:nil].firstObject;
+    ANWExpandScrollView *view = [[NSBundle mainBundle] loadNibNamed:NSStringFromClass([self class]) owner:self options:nil].firstObject;
     if (view) {
         
         [view loadView];
@@ -47,7 +47,7 @@
 
 + (instancetype)initWithFrame:(CGRect)frame
 {
-    PLExpandScrollView *view = [self init];
+    ANWExpandScrollView *view = [self init];
     if (view)
     {
         [view setFrame:frame];
@@ -70,7 +70,7 @@
     _scrollEnabledCollapse = YES;
     _scrollEnabledExpand = NO;
     _currentPageIndex = NSNotFound;
-    _status = PLExpandScrollViewStatusCollapse;
+    _status = ANWExpandScrollViewStatusCollapse;
     
     [self addPinchGestureRecognizer];
 }
@@ -109,7 +109,7 @@
     
     if (indexPath != nil) {
         
-        self.status = PLExpandScrollViewStatusPinching;
+        self.status = ANWExpandScrollViewStatusPinching;
         
         _indexOfPinchingElement = indexPath.row;
         
@@ -270,7 +270,7 @@
     }
 }
 
--(void)setStatus:(PLExpandScrollViewStatus)status
+-(void)setStatus:(ANWExpandScrollViewStatus)status
 {
     if (status == _status) {
         return;
@@ -297,7 +297,7 @@
     
     _tableView.scrollEnabled = self.scrollEnabledExpand;
     
-    self.status = PLExpandScrollViewStatusExpand;
+    self.status = ANWExpandScrollViewStatusExpand;
     
     _tableView.separatorColor = [UIColor clearColor];
 }
@@ -318,7 +318,7 @@
     
     _tableView.scrollEnabled = self.scrollEnabledCollapse;
     
-    self.status = PLExpandScrollViewStatusCollapse;
+    self.status = ANWExpandScrollViewStatusCollapse;
     
     _tableView.separatorColor = [UIColor whiteColor];
 }
